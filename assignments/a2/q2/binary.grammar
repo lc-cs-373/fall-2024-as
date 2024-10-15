@@ -1,12 +1,57 @@
 # BINARY
 # Lexical specification
-
+NL '\n'
+ZERO '0'
+ONE '1'
 %
 
 # Syntactic specification
 <start> ::= <bits> NL
 <bits>  **= <bit>
-
+<bit>:BitZero ::= <ZERO>
+<bit>:BitOne ::= <ONE>
 %
 
 # Semantic specification
+Start
+%%%
+    public void $run() {
+        System.out.println(""+bits.eval());
+    }
+%%%
+
+Bits
+%%%
+    public int eval() {
+        if (this.bitList.size()<1){
+            throw new PLCCException("No digits!");
+        }
+        int sum=0;
+        for (Bit bit : this.bitList){
+            sum*=2;
+            sum+=bit.eval();
+            
+        }
+        return sum;
+    }
+%%%
+
+Bit
+%%%
+    abstract int eval();
+    
+%%%
+
+BitZero
+%%%
+    public int eval() {
+        return 0;
+    }
+%%%
+
+BitOne
+%%%
+    public int eval(){
+        return 1;
+    }
+%%%

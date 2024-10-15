@@ -10,7 +10,7 @@ NUM '\d+'
 
 # Syntactic specification
 <lon>           ::= LPAREN <NUM> <nums> RPAREN
-<nums>:NumsNode ::= <NUM> <nums>
+<nums>:NumsNode ::= <NUM>a <nums>
 <nums>:NumsNull ::=
 
 %
@@ -39,13 +39,16 @@ Nums
 NumsNode
 %%%
     public int min(int minSoFar) {
-        return 0; // This is just a stub. Replace it with your implementation.
+        if (Integer.parseInt(a.toString())<minSoFar){
+        minSoFar=Integer.parseInt(a.toString());
+         }
+        return nums.min(minSoFar);
     }
 %%%
 
 NumsNull
 %%%
     public int min(int minSoFar) {
-        return 0; // This is just a stub. Replace it with your implementation.
+        return minSoFar;
     }
 %%%
