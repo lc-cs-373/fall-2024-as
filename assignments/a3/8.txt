@@ -1,0 +1,10 @@
+let
+    p = proc(t) add1(t)
+in
+    .p(4)
+
+becomes
+
+.proc(t) add1(t) (4)
+
+both evaluate to 5.

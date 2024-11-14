@@ -1,0 +1,13 @@
+let
+    x = 3
+in
+    let
+        y = 5
+    in
+        +(x, +(y, 2))
+
+becomes
+
+.proc(x) .proc(y)+(x,+(y,2))(5)(3)
+
+both return 10.

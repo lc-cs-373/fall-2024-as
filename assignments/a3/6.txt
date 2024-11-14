@@ -1,0 +1,12 @@
+let
+    x = 3
+    y = 5
+    z = 8
+in
+    +(x, +(y, z))
+
+replace with procedure application:
+
+.proc(x,y,z) +(x, +(y, z)) (3,5,8)
+
+both return 16.
