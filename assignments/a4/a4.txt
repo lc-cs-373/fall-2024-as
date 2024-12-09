@@ -1,0 +1,17 @@
+QUESTION 1
+SET: 3
+REF: 4
+NAME: 4
+NEED: 4
+
+QUESTION 2
+SET: 2
+REF: 2
+NAME: 0
+NEED: 2
+
+QUESTION 5
+[int => int]
+
+QUESTION 6
+ints are no longer truthy or falsy, and treating them as boolean causes a type mismatch.
